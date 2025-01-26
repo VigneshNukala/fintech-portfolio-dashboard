@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   LineChart,
   Line,
@@ -20,14 +20,14 @@ import {
 } from "lucide-react";
 import Navbar from "../Navbar/navbar";
 
-const data = [
-  { name: "Jan", value: 4000 },
-  { name: "Feb", value: 3000 },
-  { name: "Mar", value: 5000 },
-  { name: "Apr", value: 2780 },
-  { name: "May", value: 1890 },
-  { name: "Jun", value: 2390 },
-];
+// const data = [
+//   { name: "Jan", value: 4000 },
+//   { name: "Feb", value: 3000 },
+//   { name: "Mar", value: 5000 },
+//   { name: "Apr", value: 2780 },
+//   { name: "May", value: 1890 },
+//   { name: "Jun", value: 2390 },
+// ];
 
 const performanceData = [
   { name: "Mon", stocks: 3000, crypto: 1400 },
@@ -190,6 +190,13 @@ const AssetCard = ({ title, value, icon, percentage }: AssetCardProps) => (
 );
 
 const Dashboard = () => {
+  const [data,setData] = useState([])
+  useEffect(() => {
+    fetch("/dummy_data.json")
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
   return (
     <>
       <Navbar />

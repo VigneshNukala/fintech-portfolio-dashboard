@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Cookies from 'js-cookie';
 import { Mail, Lock, User, ArrowRight } from "lucide-react";
 import { PieChart } from "lucide-react";
-
 
 const Signup = () => {
   const [username, setName] = useState("");
@@ -11,29 +9,25 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState(false);
   const [errMsg, setErrmsg] = useState("");
-  
-  const onSubmitSuccess = (jwtToken:string) => {
-    Cookies.set('jwt_token', jwtToken, {
-      expires: 30,
-      path: '/',
-    })
-    const navigate = useNavigate();
-      navigate('/')
-  }
-  const onSubmitFailure = (err: string | unknown) => {
+  const navigate = useNavigate();
+
+  const onSubmitSuccess = () => {
+    navigate("/login");
+  };
+  const onSubmitFailure = () => {
     setStatus(true);
     setErrmsg("mistake");
-  }
+  };
 
-  const handleSubmit = async (event: SubmitEvent) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(1)
+    console.log(1);
     const userDetails = {
       username,
       email,
       password,
     };
-    const url = "http://localhost:3005/signup/";
+    const url = "http://localhost:3005/signup";
     const options = {
       method: "POST",
       headers: {
@@ -41,25 +35,24 @@ const Signup = () => {
       },
       body: JSON.stringify(userDetails),
     };
-    console.log(1)
-    try{
+    console.log(1);
+    try {
       const response = await fetch(url, options);
-      console.log(response)
-      if (! response.ok) {
+      console.log(response);
+      if (!response.ok) {
         const errorData = await response.text();
-        console.error('Eroor:', errorData)
-        setErrmsg(errorData)
-        setStatus(true)
+        console.error("Eroor:", errorData);
+        setErrmsg(errorData);
+        setStatus(true);
         return;
       }
-      console.log(1)
-        const data = await response.json();
-        console.log(data);
-        onSubmitSuccess(data.jwtToken);
-    }
-    catch(error){
-      console.log(error)
-      onSubmitFailure(error)
+      console.log(1);
+      const data = await response.json();
+      console.log(data);
+      onSubmitSuccess();
+    } catch (error) {
+      console.log(error);
+      onSubmitFailure();
     }
   };
 
@@ -77,8 +70,7 @@ const Signup = () => {
           <p className="text-gray-400">Start your investment journey today</p>
         </div>
 
-        <form onSubmit={() => handleSubmit} className="space-y-6">
-
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label
               htmlFor="name"
@@ -96,6 +88,7 @@ const Signup = () => {
                 className="w-full bg-gray-800 text-white pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter your full name"
                 required
+                autoComplete="username"
               />
             </div>
           </div>
@@ -117,6 +110,7 @@ const Signup = () => {
                 className="w-full bg-gray-800 text-white pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Enter your email"
                 required
+                autoComplete="email"
               />
             </div>
           </div>
@@ -138,11 +132,10 @@ const Signup = () => {
                 className="w-full bg-gray-800 text-white pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Create a password"
                 required
+                autoComplete="current-password"
               />
             </div>
-            {status && <p className="mt-2 text-sm text-gray-400">
-              {errMsg}
-            </p>}
+            {status && <p className="mt-2 text-sm text-gray-400">{errMsg}</p>}
           </div>
 
           <button

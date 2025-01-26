@@ -1,0 +1,462 @@
+[
+    {
+        "date": "2025-01-26",
+        "totalValue": 9415.96,
+        "return": -0.26,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 3386.72
+            },
+            {
+                "assetType": "Bond",
+                "value": 2505.15
+            },
+            {
+                "assetType": "Crypto",
+                "value": 2278.9
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-26",
+            "benchmarkReturn": -0.21
+        }
+    },
+    {
+        "date": "2025-01-25",
+        "totalValue": 8054.6,
+        "return": 5.03,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 4184.99
+            },
+            {
+                "assetType": "Bond",
+                "value": 1820.8
+            },
+            {
+                "assetType": "Crypto",
+                "value": 2130.58
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-25",
+            "benchmarkReturn": 5.22
+        }
+    },
+    {
+        "date": "2025-01-24",
+        "totalValue": 10354.93,
+        "return": 4.02,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 3227.34
+            },
+            {
+                "assetType": "Bond",
+                "value": 2265.88
+            },
+            {
+                "assetType": "Crypto",
+                "value": 2801.2
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-24",
+            "benchmarkReturn": 6.88
+        }
+    },
+    {
+        "date": "2025-01-23",
+        "totalValue": 11662.83,
+        "return": -3.36,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 3219.78
+            },
+            {
+                "assetType": "Bond",
+                "value": 1454.96
+            },
+            {
+                "assetType": "Crypto",
+                "value": 2800.31
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-23",
+            "benchmarkReturn": -1.1
+        }
+    },
+    {
+        "date": "2025-01-22",
+        "totalValue": 10069.8,
+        "return": 8.98,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 4228.58
+            },
+            {
+                "assetType": "Bond",
+                "value": 2054.47
+            },
+            {
+                "assetType": "Crypto",
+                "value": 2078.74
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-22",
+            "benchmarkReturn": 2.07
+        }
+    },
+    {
+        "date": "2025-01-21",
+        "totalValue": 11269.38,
+        "return": -3.8,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 3349.0
+            },
+            {
+                "assetType": "Bond",
+                "value": 1609.82
+            },
+            {
+                "assetType": "Crypto",
+                "value": 1897.32
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-21",
+            "benchmarkReturn": 5.13
+        }
+    },
+    {
+        "date": "2025-01-20",
+        "totalValue": 10865.59,
+        "return": -3.93,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 4528.14
+            },
+            {
+                "assetType": "Bond",
+                "value": 2539.95
+            },
+            {
+                "assetType": "Crypto",
+                "value": 2942.79
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-20",
+            "benchmarkReturn": -0.56
+        }
+    },
+    {
+        "date": "2025-01-19",
+        "totalValue": 11985.54,
+        "return": 8.22,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 4286.54
+            },
+            {
+                "assetType": "Bond",
+                "value": 2504.09
+            },
+            {
+                "assetType": "Crypto",
+                "value": 1918.4
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-19",
+            "benchmarkReturn": 0.7
+        }
+    },
+    {
+        "date": "2025-01-18",
+        "totalValue": 11762.74,
+        "return": 2.36,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 4050.95
+            },
+            {
+                "assetType": "Bond",
+                "value": 1592.17
+            },
+            {
+                "assetType": "Crypto",
+                "value": 1183.22
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-18",
+            "benchmarkReturn": 4.86
+        }
+    },
+    {
+        "date": "2025-01-17",
+        "totalValue": 10459.65,
+        "return": 7.83,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 3522.54
+            },
+            {
+                "assetType": "Bond",
+                "value": 2324.61
+            },
+            {
+                "assetType": "Crypto",
+                "value": 1055.02
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-17",
+            "benchmarkReturn": 1.84
+        }
+    },
+    {
+        "date": "2025-01-16",
+        "totalValue": 9836.21,
+        "return": 6.47,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 3430.07
+            },
+            {
+                "assetType": "Bond",
+                "value": 1196.58
+            },
+            {
+                "assetType": "Crypto",
+                "value": 1613.56
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-16",
+            "benchmarkReturn": 1.36
+        }
+    },
+    {
+        "date": "2025-01-15",
+        "totalValue": 11489.44,
+        "return": 9.63,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 3229.95
+            },
+            {
+                "assetType": "Bond",
+                "value": 2974.53
+            },
+            {
+                "assetType": "Crypto",
+                "value": 2368.55
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-15",
+            "benchmarkReturn": 0.07
+        }
+    },
+    {
+        "date": "2025-01-14",
+        "totalValue": 9245.11,
+        "return": -3.13,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 4181.64
+            },
+            {
+                "assetType": "Bond",
+                "value": 1240.69
+            },
+            {
+                "assetType": "Crypto",
+                "value": 2266.9
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-14",
+            "benchmarkReturn": 6.53
+        }
+    },
+    {
+        "date": "2025-01-13",
+        "totalValue": 11006.58,
+        "return": 0.2,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 4358.83
+            },
+            {
+                "assetType": "Bond",
+                "value": 1172.52
+            },
+            {
+                "assetType": "Crypto",
+                "value": 2258.56
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-13",
+            "benchmarkReturn": 3.55
+        }
+    },
+    {
+        "date": "2025-01-12",
+        "totalValue": 9730.79,
+        "return": 9.79,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 4810.78
+            },
+            {
+                "assetType": "Bond",
+                "value": 2684.18
+            },
+            {
+                "assetType": "Crypto",
+                "value": 1769.31
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-12",
+            "benchmarkReturn": 5.94
+        }
+    },
+    {
+        "date": "2025-01-11",
+        "totalValue": 10897.1,
+        "return": 0.07,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 4384.55
+            },
+            {
+                "assetType": "Bond",
+                "value": 2249.01
+            },
+            {
+                "assetType": "Crypto",
+                "value": 1986.61
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-11",
+            "benchmarkReturn": 5.85
+        }
+    },
+    {
+        "date": "2025-01-10",
+        "totalValue": 11892.68,
+        "return": 2.24,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 3972.08
+            },
+            {
+                "assetType": "Bond",
+                "value": 2463.58
+            },
+            {
+                "assetType": "Crypto",
+                "value": 2281.84
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-10",
+            "benchmarkReturn": 4.84
+        }
+    },
+    {
+        "date": "2025-01-09",
+        "totalValue": 11593.56,
+        "return": -0.07,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 4583.31
+            },
+            {
+                "assetType": "Bond",
+                "value": 2905.69
+            },
+            {
+                "assetType": "Crypto",
+                "value": 1221.58
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-09",
+            "benchmarkReturn": 2.7
+        }
+    },
+    {
+        "date": "2025-01-08",
+        "totalValue": 9718.72,
+        "return": -4.33,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 3426.15
+            },
+            {
+                "assetType": "Bond",
+                "value": 1997.89
+            },
+            {
+                "assetType": "Crypto",
+                "value": 1313.09
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-08",
+            "benchmarkReturn": 2.46
+        }
+    },
+    {
+        "date": "2025-01-07",
+        "totalValue": 11102.31,
+        "return": -2.34,
+        "assetBreakdown": [
+            {
+                "assetType": "Stock",
+                "value": 3174.45
+            },
+            {
+                "assetType": "Bond",
+                "value": 1342.64
+            },
+            {
+                "assetType": "Crypto",
+                "value": 1954.88
+            }
+        ],
+        "benchmarkComparison": {
+            "date": "2025-01-07",
+            "benchmarkReturn": 0.76
+        }
+    }
+]

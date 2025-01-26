@@ -20,7 +20,7 @@ let db: Database<sqlite3.Database, sqlite3.Statement> | null = null;
 const initializeDBAndServer = async () => {
   try {
     db = await open({
-      filename: "D:/React Projects/fintech-dashboard/backend/data.db",
+      filename: "D:/React Projects/fintech-portfolio-dashboard/backend/data.db",
       driver: sqlite3.Database,
     });
     app.listen(3005, () => {
@@ -67,7 +67,7 @@ app.post("/signup/", async (req: Request, res: Response) => {
 // Login Endpoint
 app.post("/login/", async (req: Request, res: Response) => {
   const { email, password } = req.body;
-
+  console.log(email,password)
   try {
     if (!db) throw new Error("Database not initialized");
 

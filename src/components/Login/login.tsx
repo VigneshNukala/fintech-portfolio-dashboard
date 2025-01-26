@@ -1,15 +1,62 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 import { Mail, Lock, ArrowRight } from "lucide-react";
 import { PieChart } from "lucide-react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [status, setStatus] = useState(false);
+  const [errMsg, setErrmsg] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: SubmitEvent) => {
+  const onSubmitSuccess = (jwtToken: string) => {
+    Cookies.set("jwt_token", jwtToken, {
+      expires: 30,
+      path: "/",
+    });
+    navigate("/");
+  };
+  const onSubmitFailure = (err: string | unknown) => {
+    console.log(err)
+    setStatus(true);
+    setErrmsg("mistake");
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Add authentication logic here
+    const userDetails = {
+      email,
+      password,
+    };
+    const url = "http://localhost:3005/login";
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userDetails),
+    };
+    console.log("hello")
+    try {
+      const response = await fetch(url, options);
+      console.log(response);
+      if (!response.ok) {
+        const errorData = await response.text();
+        console.error("Eroor:", errorData);
+        setErrmsg(errorData);
+        setStatus(true);
+        return;
+      }
+      console.log(1);
+      const data = await response.json();
+      console.log(data);
+      onSubmitSuccess(data.jwtToken);
+    } catch (error) {
+      console.log(error);
+      onSubmitFailure(error);
+    }
   };
 
   return (
@@ -24,7 +71,7 @@ const Login = () => {
           <p className="text-gray-400">Please enter your details to sign in</p>
         </div>
 
-        <form onSubmit={() => handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label
               htmlFor="email"
@@ -88,7 +135,7 @@ const Login = () => {
               Forgot password?
             </button>
           </div>
-
+          {status && <p>{errMsg}</p>}
           <button
             type="submit"
             className="w-full flex items-center justify-center space-x-2 bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors"
