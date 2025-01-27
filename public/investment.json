@@ -34,5 +34,37 @@
       { "strategy": "Dividend", "returns": 8.5 },
       { "strategy": "Index", "returns": 10.3 },
       { "strategy": "Tech", "returns": 18.6 }
+    ],
+    "strategyComparision":[
+      {
+        "name": "Strategy A",
+        "data": [
+          { "date": "2023-01-01", "value": 100 },
+          { "date": "2023-01-02", "value": 105 },
+          { "date": "2023-01-03", "value": 102 },
+          { "date": "2023-01-04", "value": 108 },
+          { "date": "2023-01-05", "value": 110 }
+        ]
+      },
+      {
+        "name": "Strategy B",
+        "data": [
+          { "date": "2023-01-01", "value": 95 },
+          { "date": "2023-01-02", "value": 98 },
+          { "date": "2023-01-03", "value": 101 },
+          { "date": "2023-01-04", "value": 105 },
+          { "date": "2023-01-05", "value": 108 }
+        ]
+      },
+      {
+        "name": "Strategy C",
+        "data": [
+          { "date": "2023-01-01", "value": 90 },
+          { "date": "2023-01-02", "value": 92 },
+          { "date": "2023-01-03", "value": 95 },
+          { "date": "2023-01-04", "value": 98 },
+          { "date": "2023-01-05", "value": 100 }
+        ]
+      }
     ]
 }

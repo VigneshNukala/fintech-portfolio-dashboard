@@ -1,0 +1,179 @@
+{
+  "marketData": [
+    {
+      "id" : "1",
+      "symbol": "AAPL",
+      "name": "Apple Inc.",
+      "priceDisplay": "173.50",
+      "price": 173.50,
+      "change": "+1.2%",
+      "volumeDisplay": "82.5M",
+      "volume": 82500000,
+      "positive": true
+    },
+    {
+      "id" : "2",
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "priceDisplay": "378.85",
+      "price": 378.85,
+      "change": "+0.8%",
+      "volumeDisplay": "45.2M",
+      "volume": 45200000,
+      "positive": true
+    },
+    {
+      "id" : "3",
+      "symbol": "GOOGL",
+      "name": "Google",
+      "priceDisplay": "142.65",
+      "price": 142.65,
+      "change": "-0.5%",
+      "volumeDisplay": "33.1M",
+      "volume": 33100000,
+      "positive": false
+    },
+    {
+      "id" : "4",
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "priceDisplay": "175.35",
+      "price": 175.35,
+      "change": "+2.1%",
+      "volumeDisplay": "55.8M",
+      "volume": 55800000,
+      "positive": true
+    },
+    {
+      "id" : "5",
+      "symbol": "TSLA",
+      "name": "Tesla",
+      "priceDisplay": "202.45",
+      "price": 202.45,
+      "change": "-1.8%",
+      "volumeDisplay": "128.4M",
+      "volume": 128400000,
+      "positive": false
+    },
+    {
+      "id" : "6",
+      "symbol": "NFLX",
+      "name": "Netflix",
+      "priceDisplay": "602.15",
+      "price": 602.15,
+      "change": "+1.5%",
+      "volumeDisplay": "27.8M",
+      "volume": 27800000,
+      "positive": true
+    },
+    {
+      "id" : "7",
+      "symbol": "NVDA",
+      "name": "Nvidia",
+      "priceDisplay": "245.50",
+      "price": 245.50,
+      "change": "-0.7%",
+      "volumeDisplay": "32.1M",
+      "volume": 32100000,
+      "positive": false
+    },
+    {
+      "id" : "8",
+      "symbol": "DIS",
+      "name": "Walt Disney",
+      "priceDisplay": "172.30",
+      "price": 172.30,
+      "change": "+0.9%",
+      "volumeDisplay": "16.4M",
+      "volume": 16400000,
+      "positive": true
+    },
+    {
+      "id" : "9",
+      "symbol": "V",
+      "name": "Visa",
+      "priceDisplay": "221.45",
+      "price": 221.45,
+      "change": "+0.3%",
+      "volumeDisplay": "10.7M",
+      "volume": 10700000,
+      "positive": true
+    },
+    {
+      "id" : "10",
+      "symbol": "PYPL",
+      "name": "PayPal",
+      "priceDisplay": "273.10",
+      "price": 273.10,
+      "change": "-1.4%",
+      "volumeDisplay": "24.3M",
+      "volume": 24300000,
+      "positive": false
+    },
+    {
+      "id" : "11",
+      "symbol": "IBM",
+      "name": "IBM",
+      "priceDisplay": "138.70",
+      "price": 138.70,
+      "change": "+0.2%",
+      "volumeDisplay": "19.3M",
+      "volume": 19300000,
+      "positive": true
+    },
+    {
+      "id" : "12",
+      "symbol": "INTC",
+      "name": "Intel",
+      "priceDisplay": "56.90",
+      "price": 56.90,
+      "change": "+1.8%",
+      "volumeDisplay": "48.2M",
+      "volume": 48200000,
+      "positive": true
+    },
+    {
+      "id" : "13",
+      "symbol": "BABA",
+      "name": "Alibaba",
+      "priceDisplay": "134.25",
+      "price": 134.25,
+      "change": "-0.3%",
+      "volumeDisplay": "51.1M",
+      "volume": 51100000,
+      "positive": false
+    },
+    {
+      "id" : "14",
+      "symbol": "SHOP",
+      "name": "Shopify",
+      "priceDisplay": "156.95",
+      "price": 156.95,
+      "change": "+2.5%",
+      "volumeDisplay": "29.7M",
+      "volume": 29700000,
+      "positive": true
+    },
+    {
+      "id" : "15",
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices",
+      "priceDisplay": "109.75",
+      "price": 109.75,
+      "change": "+1.1%",
+      "volumeDisplay": "58.2M",
+      "volume": 58200000,
+      "positive": true
+    }
+  ],
+    "volumeData": [
+      { "time": "9:30", "volume": 1200 },
+      { "time": "10:30", "volume": 2100 },
+      { "time": "11:30", "volume": 1800 },
+      { "time": "12:30", "volume": 1600 },
+      { "time": "13:30", "volume": 2400 },
+      { "time": "14:30", "volume": 2800 },
+      { "time": "15:30", "volume": 3200 }
+    ]
+  }
+  
