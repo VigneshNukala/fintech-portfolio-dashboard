@@ -1,9 +1,8 @@
 import { Bell, Shield, Globe, CreditCard, LogOut } from "lucide-react";
 
 import Navbar from "../Navbar/navbar";
+import Footer from "../Footer/footer";
 
-
-  
 const Settings = () => {
 
   return (
@@ -112,6 +111,7 @@ const Settings = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

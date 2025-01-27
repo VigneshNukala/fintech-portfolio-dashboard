@@ -9,6 +9,7 @@ import {
 } from "recharts";
 import { Search, Filter, Star, TrendingUp, TrendingDown } from "lucide-react";
 import Navbar from "../Navbar/navbar";
+import Footer from "../Footer/footer";
 const marketData = [
   {
     symbol: "AAPL",
@@ -202,6 +203,7 @@ const Markets = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
