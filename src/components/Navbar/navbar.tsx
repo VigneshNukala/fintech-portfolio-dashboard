@@ -5,10 +5,9 @@ import {
   PieChart,
   TrendingUp,
   Settings,
-  Bell,
+  LogIn,
   Menu,
   X,
-  LogOut,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -25,7 +24,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link to="/dashboard" className="no-underline">
+          <Link to="/" className="no-underline">
             <button className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors">
               <LayoutDashboard />
               <span>Dashboard</span>
@@ -46,15 +45,12 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-4">
-          <button className="p-2 hover:bg-blue-50 rounded-full transition-colors">
-            <Bell size={20} />
-          </button>
-          <button
-            className="p-2 hover:bg-blue-50 rounded-full transition-colors"
-            onClick={() => navigate("/login")}
+          <button className="p-2 hover:bg-blue-50 rounded-full transition-colors"
+          onClick={() => navigate("/login")}
           >
-            <LogOut size={20} />
+            <LogIn size={20} />
           </button>
+
           {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 hover:bg-blue-50 rounded-full transition-colors"
