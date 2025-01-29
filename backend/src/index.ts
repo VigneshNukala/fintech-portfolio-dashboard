@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 import { open } from "sqlite";
 import { Database } from "sqlite";
 import sqlite3 from "sqlite3";
-
+const port = process.env.PORT || 3005
 // Extend the Request interface to include `email`
 declare global {
   namespace Express {
@@ -29,8 +29,8 @@ const initializeDBAndServer = async () => {
       filename: "D:/React Projects/fintech-portfolio-dashboard/backend/data.db",
       driver: sqlite3.Database,
     });
-    app.listen(3005, () => {
-      console.log(`Server Running at http://localhost:3005`);
+    app.listen(port, () => {
+      console.log(`Server Running at http://localhost:${port}`);
     });
   } catch (e: any) {
     console.error(`DB Error: ${e.message}`);
