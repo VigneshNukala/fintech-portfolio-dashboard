@@ -3,6 +3,9 @@
 ## **Introduction**  
 This repository contains the portfolio analytical dashboard for Fintech platform. It enables users to monitor their investment strategies and analyze market data.
 
+## **Deployment Link:**
+https://fintech-portfolio-dashboard.vercel.app/
+
 ## **Prerequisites**
 
 Ensure you have the following dependencies installed:
