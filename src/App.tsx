@@ -7,7 +7,6 @@ import Login from "./components/Login/login";
 import Signup from "./components/Signup/signup";
 
 function App() {
-
   return (
     <div className="min-h-screen bg-gray-900">
       <Routes>

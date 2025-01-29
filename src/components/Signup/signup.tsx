@@ -46,7 +46,7 @@ const Signup = () => {
         return;
       }
       const data = await response.json();
-      console.log(data)
+      console.log(data);
       onSubmitSuccess();
     } catch (error) {
       console.log(error);
@@ -60,15 +60,22 @@ const Signup = () => {
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <PieChart className="h-10 w-10 text-blue-600" />
-            <span className="text-3xl font-semibold text-gray-800">PortfolioX</span>
+            <span className="text-3xl font-semibold text-gray-800">
+              PortfolioX
+            </span>
           </div>
-          <h2 className="text-3xl font-semibold text-gray-900 mb-2">Create an account</h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-2">
+            Create an account
+          </h2>
           <p className="text-gray-600">Start your investment journey today</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Full Name
             </label>
             <div className="relative">
@@ -87,7 +94,10 @@ const Signup = () => {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Email
             </label>
             <div className="relative">
@@ -106,7 +116,10 @@ const Signup = () => {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Password
             </label>
             <div className="relative">

@@ -49,7 +49,10 @@ const Navbar = () => {
           <button className="p-2 hover:bg-blue-50 rounded-full transition-colors">
             <Bell size={20} />
           </button>
-          <button className="p-2 hover:bg-blue-50 rounded-full transition-colors" onClick={() => navigate('/login')}>
+          <button
+            className="p-2 hover:bg-blue-50 rounded-full transition-colors"
+            onClick={() => navigate("/login")}
+          >
             <LogOut size={20} />
           </button>
           {/* Mobile Menu Button */}

@@ -1,6 +1,6 @@
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { open } from "sqlite";
@@ -39,7 +39,7 @@ const initializeDBAndServer = async () => {
 
 initializeDBAndServer();
 
-// Register 
+// Register
 app.post("/signup/", async (req: Request, res: Response) => {
   const { username, email, password } = req.body;
   console.log(username, password, email);
@@ -70,7 +70,7 @@ app.post("/signup/", async (req: Request, res: Response) => {
   }
 });
 
-// Login 
+// Login
 app.post("/login/", async (req: Request, res: Response) => {
   const { email, password } = req.body;
   console.log(email, password);
@@ -101,28 +101,28 @@ app.post("/login/", async (req: Request, res: Response) => {
 // Middleware to authenticate JWT
 const authenticate = (req: Request, res: Response, next: NextFunction) => {
   let jwtToken;
-  const authHeader = req.headers['authorization'];
+  const authHeader = req.headers["authorization"];
   if (authHeader !== undefined) {
-    jwtToken = authHeader.split(' ')[1]; // Extract JWT token from Authorization header
+    jwtToken = authHeader.split(" ")[1]; // Extract JWT token from Authorization header
   }
   if (jwtToken === undefined) {
-    res.status(401).send('Invalid JWT Token');
+    res.status(401).send("Invalid JWT Token");
   } else {
-    jwt.verify(jwtToken, 'SECRET', async (error, payload) => {
+    jwt.verify(jwtToken, "SECRET", async (error, payload) => {
       if (error) {
-        res.status(401).send('Invalid JWT Token');
+        res.status(401).send("Invalid JWT Token");
       } else {
         // Type guard: Check if payload is not undefined
-        if (payload && typeof payload === 'object' && 'email' in payload) {
+        if (payload && typeof payload === "object" && "email" in payload) {
           req.email = payload.email; // Store the email in req.email
           next(); // Continue to the next route handler
         } else {
-          res.status(401).send('Invalid JWT Token');
+          res.status(401).send("Invalid JWT Token");
         }
       }
     });
   }
-}
+};
 
 // Settings Route
 app.get("/settings/", authenticate, async (req: Request, res: Response) => {
@@ -137,8 +137,8 @@ app.get("/settings/", authenticate, async (req: Request, res: Response) => {
 
     const checkUserQuery = `SELECT * FROM user WHERE email = ?`;
     const dbArray = await db.get(checkUserQuery, [email]);
-    res.json(dbArray); 
-    console.log(dbArray)
+    res.json(dbArray);
+    console.log(dbArray);
   } catch (error: any) {
     res.status(400).json({ error: error.message });
   }

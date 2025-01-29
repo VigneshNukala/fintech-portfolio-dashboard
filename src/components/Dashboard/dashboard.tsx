@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  LineChart,
-} from "recharts";
+import { LineChart } from "recharts";
 import {
   DollarSign,
   TrendingUp,
@@ -54,12 +52,12 @@ const StatCard = ({
       {icon}
     </div>
     <div className="flex items-baseline justify-between">
-      <span className="text-xl sm:text-2xl font-bold text-gray-900">{value}</span>
+      <span className="text-xl sm:text-2xl font-bold text-gray-900">
+        {value}
+      </span>
       <span
         className={`px-2.5 py-0.5 rounded-full text-sm ${
-          positive
-            ? "text-green-600 bg-green-100"
-            : "text-red-600 bg-red-100"
+          positive ? "text-green-600 bg-green-100" : "text-red-600 bg-red-100"
         }`}
       >
         {change}
@@ -96,7 +94,9 @@ const AssetCard = ({ title, value, icon, percentage }: AssetCardProps) => (
 const Dashboard = () => {
   const [portData, setPortData] = useState<PortfolioGrowthData[]>([]);
   const [assetData, setAssetData] = useState<AssetAllocationData[]>([]);
-  const [strategyData, setStraegyData] = useState<StrategyPerformanceData[]>([]);
+  const [strategyData, setStraegyData] = useState<StrategyPerformanceData[]>(
+    []
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -155,7 +155,9 @@ const Dashboard = () => {
             <div className="bg-white rounded-lg shadow-md">
               <div className="flex items-center gap-2 p-4 border-b">
                 <LineChart className="w-5 h-5 text-indigo-600" />
-                <h2 className="text-xl font-semibold text-gray-800">Portfolio Growth</h2>
+                <h2 className="text-xl font-semibold text-gray-800">
+                  Portfolio Growth
+                </h2>
               </div>
               <PortfolioGrowthChart data={portData} />
             </div>
@@ -163,7 +165,9 @@ const Dashboard = () => {
             <div className="bg-white rounded-lg shadow-md">
               <div className="flex items-center gap-2 p-4 border-b">
                 <PieChartIcon className="w-5 h-5 text-indigo-600" />
-                <h2 className="text-xl font-semibold text-gray-800">Asset Allocation</h2>
+                <h2 className="text-xl font-semibold text-gray-800">
+                  Asset Allocation
+                </h2>
               </div>
               <AssetAllocationChart data={assetData} />
             </div>
@@ -171,7 +175,9 @@ const Dashboard = () => {
             <div className="bg-white rounded-lg shadow-md lg:col-span-2">
               <div className="flex items-center gap-2 p-4 border-b">
                 <TrendingUp className="w-5 h-5 text-indigo-600" />
-                <h2 className="text-xl font-semibold text-gray-800">Strategy Performance</h2>
+                <h2 className="text-xl font-semibold text-gray-800">
+                  Strategy Performance
+                </h2>
               </div>
               <StrategyPerformanceChart data={strategyData} />
             </div>

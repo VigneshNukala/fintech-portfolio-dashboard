@@ -65,7 +65,9 @@ const Login = () => {
             <PieChart className="h-10 w-10 text-blue-600" />
             <span className="text-3xl font-bold text-gray-800">PortfolioX</span>
           </div>
-          <h2 className="text-3xl font-semibold text-gray-900 mb-2">Welcome back</h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-2">
+            Welcome back
+          </h2>
           <p className="text-gray-600">Please enter your details to sign in</p>
         </div>
 

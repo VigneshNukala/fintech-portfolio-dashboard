@@ -7,7 +7,7 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
-} from 'recharts';
+} from "recharts";
 
 type StrategyPerformanceData = {
   strategy: string;

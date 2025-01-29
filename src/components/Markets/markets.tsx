@@ -45,12 +45,15 @@ const Markets = () => {
 
     fetchData();
   }, []);
-  
+
   const searchResults = marketData.filter((each) =>
     each.name.toLowerCase().includes(searchInput.toLowerCase())
   );
-  
-  const filteredData = selectedVolume === "all" ? marketData : marketData.filter((stock) => stock.volume <= parseInt(selectedVolume));
+
+  const filteredData =
+    selectedVolume === "all"
+      ? marketData
+      : marketData.filter((stock) => stock.volume <= parseInt(selectedVolume));
 
   return (
     <>
@@ -74,7 +77,9 @@ const Markets = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4 bg-white p-2 rounded-lg shadow-md w-full sm:w-auto">
-              <label className="text-gray-700 font-medium">Filter By Volume</label>
+              <label className="text-gray-700 font-medium">
+                Filter By Volume
+              </label>
               <div className="relative w-full sm:w-auto">
                 <select
                   id="volumeFilter"
@@ -94,7 +99,7 @@ const Markets = () => {
           {/* Market Overview */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
             {/* Market Volume */}
-            {selectedVolume === 'all' && (!searchInput && (
+            {selectedVolume === "all" && !searchInput && (
               <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg">
                 <h2 className="text-xl font-semibold mb-4 text-gray-900">
                   Market Volume
@@ -118,7 +123,7 @@ const Markets = () => {
                   </ResponsiveContainer>
                 </div>
               </div>
-            ))}
+            )}
 
             {/* Top Movers */}
             {!searchInput && (
@@ -163,7 +168,7 @@ const Markets = () => {
           </div>
 
           {/* Market Table */}
-          {selectedVolume === 'all' && (
+          {selectedVolume === "all" && (
             <div className="bg-white rounded-xl shadow-lg overflow-x-auto">
               <div className="max-h-[400px] overflow-y-auto">
                 <table className="min-w-full">
