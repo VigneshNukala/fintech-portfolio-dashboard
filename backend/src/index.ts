@@ -1,14 +1,20 @@
-import express, { Request, Response } from "express";
+import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
-
 import { v4 as uuidv4 } from 'uuid';
-
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-
 import { open } from "sqlite";
 import { Database } from "sqlite";
 import sqlite3 from "sqlite3";
+
+// Extend the Request interface to include `email`
+declare global {
+  namespace Express {
+    interface Request {
+      email?: string; // This is to add the `email` field after JWT decoding
+    }
+  }
+}
 
 const app = express();
 app.use(express.json());
@@ -33,10 +39,10 @@ const initializeDBAndServer = async () => {
 
 initializeDBAndServer();
 
-// Register Endpoint
+// Register 
 app.post("/signup/", async (req: Request, res: Response) => {
-  const { username,email, password} = req.body;
-  console.log(username,password,email)
+  const { username, email, password } = req.body;
+  console.log(username, password, email);
   try {
     if (!db) throw new Error("Database not initialized");
 
@@ -64,10 +70,10 @@ app.post("/signup/", async (req: Request, res: Response) => {
   }
 });
 
-// Login Endpoint
+// Login 
 app.post("/login/", async (req: Request, res: Response) => {
   const { email, password } = req.body;
-  console.log(email,password)
+  console.log(email, password);
   try {
     if (!db) throw new Error("Database not initialized");
 
@@ -82,14 +88,58 @@ app.post("/login/", async (req: Request, res: Response) => {
       if (isPasswordMatched) {
         const payload = { email };
         const jwtToken = jwt.sign(payload, "SECRET");
-        console.log("s")
         res.json({ jwtToken });
       } else {
-        console.log("no")
         res.status(400).json("Username or Password is Invalid");
       }
     }
   } catch (error: any) {
     res.status(500).json({ error: error.message });
+  }
+});
+
+// Middleware to authenticate JWT
+const authenticate = (req: Request, res: Response, next: NextFunction) => {
+  let jwtToken;
+  const authHeader = req.headers['authorization'];
+  if (authHeader !== undefined) {
+    jwtToken = authHeader.split(' ')[1]; // Extract JWT token from Authorization header
+  }
+  if (jwtToken === undefined) {
+    res.status(401).send('Invalid JWT Token');
+  } else {
+    jwt.verify(jwtToken, 'SECRET', async (error, payload) => {
+      if (error) {
+        res.status(401).send('Invalid JWT Token');
+      } else {
+        // Type guard: Check if payload is not undefined
+        if (payload && typeof payload === 'object' && 'email' in payload) {
+          req.email = payload.email; // Store the email in req.email
+          next(); // Continue to the next route handler
+        } else {
+          res.status(401).send('Invalid JWT Token');
+        }
+      }
+    });
+  }
+}
+
+// Settings Route
+app.get("/settings/", authenticate, async (req: Request, res: Response) => {
+  try {
+    if (!db) throw new Error("Database not initialized");
+
+    const email = req.email;
+
+    if (!email) {
+      res.status(400).json("Email not found in JWT payload");
+    }
+
+    const checkUserQuery = `SELECT * FROM user WHERE email = ?`;
+    const dbArray = await db.get(checkUserQuery, [email]);
+    res.json(dbArray); 
+    console.log(dbArray)
+  } catch (error: any) {
+    res.status(400).json({ error: error.message });
   }
 });

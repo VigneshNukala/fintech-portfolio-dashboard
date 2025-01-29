@@ -25,7 +25,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="no-underline">
+          <Link to="/dashboard" className="no-underline">
             <button className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-blue-50 transition-colors">
               <LayoutDashboard />
               <span>Dashboard</span>

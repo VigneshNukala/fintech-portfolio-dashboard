@@ -1,9 +1,47 @@
 import { Bell, Shield, Globe, CreditCard, LogOut } from "lucide-react";
-
+import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
 import Navbar from "../Navbar/navbar";
 import Footer from "../Footer/footer";
 
+type User = {
+  username: string;
+  email: string;
+};
+
 const Settings = () => {
+  const [userData, setUserData] = useState<User | null>(null);
+
+  // Fetch User Data
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const jwtToken = Cookies.get("jwt_token");
+      if (jwtToken) {
+        const apiUrl = `http://localhost:3005/settings`;
+        const options = {
+          headers: {
+            Authorization: `Bearer ${jwtToken}`,
+          },
+          method: "GET",
+        };
+        try {
+          const response = await fetch(apiUrl, options);
+          if (response.ok) {
+            const fetchData = await response.json(); // Corrected from .text() to .json()
+            console.log(fetchData); // Debug the response
+            setUserData(fetchData); // Set the user data
+          } else {
+            console.error("Failed to fetch user data");
+          }
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+        }
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -18,8 +56,16 @@ const Settings = () => {
                 JD
               </div>
               <div>
-                <h2 className="text-xl font-semibold text-gray-800">Jhon Doe</h2>
-                <p className="text-sm text-gray-500">johndoe@gmail.com</p>
+                {userData ? (
+                  <>
+                    <h2 className="text-xl font-semibold text-gray-800">
+                      {userData.username}
+                    </h2>
+                    <p className="text-sm text-gray-500">{userData.email}</p>
+                  </>
+                ) : (
+                  <p>Loading...</p>
+                )}
               </div>
             </div>
             <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">

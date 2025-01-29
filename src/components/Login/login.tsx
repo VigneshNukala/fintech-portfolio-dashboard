@@ -16,7 +16,7 @@ const Login = () => {
       expires: 30,
       path: "/",
     });
-    navigate("/");
+    navigate("/dashboard");
   };
 
   const onSubmitFailure = (err: string | unknown) => {
