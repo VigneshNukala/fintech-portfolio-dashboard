@@ -11,39 +11,6 @@ Ensure you have the following dependencies installed:
 - **npm** (package manager)
 - **SQLite** (for database)
 
-## **Project File Structure**
-    ├───backend
-    │   ├───node_modules 
-    │   ├───src
-    |   |   |   index.ts
-    │   │   data.db
-    │   │   package-lock.json
-    │   │   package.json
-    │   │   tsconfig.json
-    ├───public
-    │       investment.json
-    │       markets.json
-    └───src
-        │   App.css
-        │   App.tsx
-        │   index.css
-        │   main.tsx
-        │   vite-env.d.ts
-        └───components
-    │   .gitattributes
-    │   .gitignore
-    │   eslint.config.js
-    │   file-structure.txt
-    │   index.html
-    │   package-lock.json
-    │   package.json
-    │   README.md
-    │   tsconfig.app.json
-    │   tsconfig.json
-    │   tsconfig.node.json
-    │   vite.config.ts
-
-
 ## **Getting Started**  
 
 Follow these steps to set up your development environment:
@@ -51,7 +18,8 @@ Follow these steps to set up your development environment:
 ### **1. Clone the repository:**  
 
 ```
-https://github.com/VigneshNukala/fintech-portfolio-dashboard.git
+git clone https://github.com/VigneshNukala/fintech-portfolio-dashboard.git
+cd fintech-portfolio-dashboard
 ```
 
 ### **2. Install dependencies for both frontend and backend:**
